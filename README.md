@@ -56,7 +56,7 @@ First compile it:
 
 Then run it:
 
-> java -jar ./target/apollo-missions-api-1.0-runner.jar
+> java -jar ./target/apollo-missions-api-1.0.0-runner.jar
 
 ### Run Quarkus as a native executable
 
@@ -73,4 +73,4 @@ native executable:
 
 After the compilation is done, you'll be able to run this executable directly:
 
-> ./target/apollo-missions-api-1.0-runner
+> ./target/apollo-missions-api-1.0.0-runner
