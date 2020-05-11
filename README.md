@@ -69,8 +69,32 @@ Compiling a native executable takes a bit longer, as GraalVM performs additional
 steps to remove unnecessary codepaths. Use the  `native` profile to compile a
 native executable:
 
-> ./mvnw install -Dnative
+> ./mvnw package -Dnative
 
 After the compilation is done, you'll be able to run this executable directly:
 
 > ./target/apollo-missions-api-1.0.0-runner
+
+### Run Quarkus in JVM mode in a docker container
+First compile it:
+
+> ./mvnw package
+
+Then, build the image with:
+
+> docker build -f src/main/docker/Dockerfile.jvm -t isaaceindhoven/apollo-missions-api-jvm .
+
+Then run the container using:
+> docker run -i --rm -p 8080:8080 isaaceindhoven/apollo-missions-api-jvm
+
+### Run Quarkus as a native executable in a docker container
+First compile it:
+
+> ./mvnw package -Pnative -Dquarkus.native.container-build=true
+
+Then, build the image with:
+
+> docker build -f src/main/docker/Dockerfile.native -t isaaceindhoven/apollo-missions-api .
+
+Then run the container using:
+> docker run -i --rm -p 8080:8080 isaaceindhoven/apollo-missions-api
