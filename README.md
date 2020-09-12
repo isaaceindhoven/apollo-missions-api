@@ -82,10 +82,10 @@ First compile it:
 
 Then, build the image with:
 
-> docker build -f src/main/docker/Dockerfile.jvm -t isaaceindhoven/apollo-missions-api-jvm .
+> docker build -f src/main/docker/Dockerfile.jvm -t isaacdeveloperblog/apollo-missions-api:1.0.0 .
 
 Then run the container using:
-> docker run -i --rm -p 8080:8080 isaaceindhoven/apollo-missions-api-jvm
+> docker run -i --rm -p 8080:8080 isaacdeveloperblog/apollo-missions-api:1.0.0
 
 ### Run Quarkus as a native executable in a docker container
 First compile it:
@@ -94,7 +94,7 @@ First compile it:
 
 Then, build the image with:
 
-> docker build -f src/main/docker/Dockerfile.native -t isaaceindhoven/apollo-missions-api .
+> docker build -f src/main/docker/Dockerfile.native -t isaacdeveloperblog/apollo-missions-api-native:1.0.0 .
 
 Then run the container using:
-> docker run -i --rm -p 8080:8080 isaaceindhoven/apollo-missions-api
+> docker run -i --rm -p 8080:8080 isaacdeveloperblog/apollo-missions-api-native:1.0.0
